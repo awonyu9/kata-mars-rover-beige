@@ -56,3 +56,16 @@ Feature: Turning right
 | East              | South              |
 | South             | West               |
 | West              | North              |
+
+// --- 
+
+Feature: Wrap around edges when moving forward
+
+  Given Map size is 20x20 (-10, -10) (10, 10)
+
+| Direction | Initial X | Initial Y | Expected X | Expected Y |
+---------------------------------------------------------------
+| North     | 0         | 10        | 0          | -10        |
+| West      | -10       | 0         | 10         | 0          |
+| South     | 0         | -10       | 0          | 10         |
+| East      | 10        | 0         | -10        | 0          |

@@ -30,6 +30,13 @@ test_data_turn_right = [
     ("west", "north")
 ]
 
+test_data_movement_forward_wrap = [
+    ("north", 0, 10, 0, -10),
+    ("west", -10, 0, 10, 0),
+    ("south", 0, -10, 0, 10),
+    ("east", 10, 0, -10, 0)
+]
+
 @pytest.mark.parametrize("direction, x, y, expected_x, expected_y", test_data_movement_forward)
 def test_move_forward(direction, x, y, expected_x, expected_y):
     rover = Rover(x, y, direction)
@@ -57,3 +64,10 @@ def test_turn_right(initial_direction, expected_direction):
     rover.turn_right()
 
     assert rover.direction == expected_direction
+
+@pytest.mark.parametrize("direction, x, y, expected_x, expected_y", test_data_movement_forward_wrap)
+def test_move_forward_limit(direction, x, y, expected_x, expected_y):
+    rover = Rover(x, y, direction)
+    rover.move_forward()
+
+    assert (rover.x == expected_x) and (rover.y == expected_y)
