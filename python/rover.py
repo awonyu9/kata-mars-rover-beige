@@ -27,24 +27,14 @@ class Rover:
                 self.x -= 1
         
     def turn_left(self):
-        match self.direction:
-            case "north":
-                self.direction = "west"
-            case "west":
-                self.direction = "south"
-            case "south":
-                self.direction = "east"
-            case "east":
-                self.direction = "north"
+        directions = ["north", "west", "south", "east"]
+        direction_index = directions.index(self.direction)
+        new_direction_index = (direction_index + 1) % 4
+        self.direction = directions[new_direction_index]
 
     def turn_right(self):
-        match self.direction:
-            case "north":
-                self.direction = "east"
-            case "east":
-                self.direction = "south"
-            case "south":
-                self.direction = "west"
-            case "west":
-                self.direction = "north"
+        directions = ["north", "west", "south", "east"]
+        direction_index = directions.index(self.direction)
+        new_direction_index = (direction_index - 1) % 4
+        self.direction = directions[new_direction_index]
       
