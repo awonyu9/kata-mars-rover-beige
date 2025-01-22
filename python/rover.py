@@ -25,4 +25,15 @@ class Rover:
                 self.y += 1
             case "east":
                 self.x -= 1
+        
+    def turn_left(self):
+        match self.direction:
+            case "north":
+                self.direction = "west"
+            case "west":
+                self.direction = "south"
+            case "south":
+                self.direction = "east"
+            case "east":
+                self.direction = "north"
       

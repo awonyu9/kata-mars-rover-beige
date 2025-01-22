@@ -37,6 +37,17 @@ Feature: Moving backward
 
 // ---
 
+Feature: Turning left
+
+| Initial Direction | Expected Direction |
+------------------------------------------
+| North             | West               |
+| West              | South              |
+| South             | East               |
+| East              | North              |
+
+// ---
+
 Implicit stuff:
 
 - 2D
