@@ -56,11 +56,3 @@ Feature: Turning right
 | East              | South              |
 | South             | West               |
 | West              | North              |
-
-// ---
-
-Implicit stuff:
-
-- 2D
-- discrete movement (one cell moves)
-- No diagonal moves
