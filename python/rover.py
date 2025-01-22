@@ -10,4 +10,6 @@ class Rover:
                 self.y += 1
             case "west":
                 self.x -= 1
+            case "south":
+                self.y -= 1
       

@@ -12,3 +12,9 @@ def test_move_forward_west():
     rover.move_forward()
 
     assert (rover.x == 3) and (rover.y == 2)
+
+def test_move_forward_south():
+    rover = Rover(4, 2, "south")
+    rover.move_forward()
+
+    assert (rover.x == 4) and (rover.y == 1)
