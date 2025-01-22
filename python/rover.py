@@ -36,4 +36,15 @@ class Rover:
                 self.direction = "east"
             case "east":
                 self.direction = "north"
+
+    def turn_right(self):
+        match self.direction:
+            case "north":
+                self.direction = "east"
+            case "east":
+                self.direction = "south"
+            case "south":
+                self.direction = "west"
+            case "west":
+                self.direction = "north"
       

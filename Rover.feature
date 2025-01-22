@@ -48,6 +48,17 @@ Feature: Turning left
 
 // ---
 
+Feature: Turning right
+
+| Initial Direction | Expected Direction |
+------------------------------------------
+| North             | East               |
+| East              | South              |
+| South             | West               |
+| West              | North              |
+
+// ---
+
 Implicit stuff:
 
 - 2D
