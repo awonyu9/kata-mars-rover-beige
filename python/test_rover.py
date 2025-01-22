@@ -1,26 +1,17 @@
 from rover import Rover
+import pytest
 
 
-def test_move_forward_north():
-    rover = Rover(4, 2, "north")
+test_data = [
+    ("north", 4, 2, 4, 3),
+    ("west", 4, 2, 3, 2),
+    ("south", 4, 2, 4, 1),
+    ("east", 4, 2, 5, 2)
+]
+
+@pytest.mark.parametrize("direction, x, y, expected_x, expected_y", test_data)
+def test_move_forward_north(direction, x, y, expected_x, expected_y):
+    rover = Rover(x, y, direction)
     rover.move_forward()
 
-    assert (rover.x == 4) and (rover.y == 3)
-
-def test_move_forward_west():
-    rover = Rover(4, 2, "west")
-    rover.move_forward()
-
-    assert (rover.x == 3) and (rover.y == 2)
-
-def test_move_forward_south():
-    rover = Rover(4, 2, "south")
-    rover.move_forward()
-
-    assert (rover.x == 4) and (rover.y == 1)
-
-def test_move_forward_east():
-    rover = Rover(4, 2, "east")
-    rover.move_forward()
-
-    assert (rover.x == 5) and (rover.y == 2)
+    assert (rover.x == expected_x) and (rover.y == expected_y)
