@@ -5,5 +5,9 @@ class Rover:
         self.direction = direction
 
     def move_forward(self):
-        self.y += 1         
+        match self.direction:
+            case "north":
+                self.y += 1
+            case "west":
+                self.x -= 1
       
