@@ -14,4 +14,15 @@ class Rover:
                 self.y -= 1
             case "east":
                 self.x += 1
+
+    def move_backward(self):
+        match self.direction:
+            case "north":
+                self.y -= 1
+            case "west":
+                self.x += 1
+            case "south":
+                self.y += 1
+            case "east":
+                self.x -= 1
       

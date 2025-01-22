@@ -26,6 +26,17 @@ Scenario: Facing East
 
 // ---
 
+Feature: Moving backward
+
+| Direction | Initial X | Initial Y | Expected X | Expected Y |
+---------------------------------------------------------------
+| North     | 4         | 3         | 4          | 1          |
+| West      | 4         | 2         | 5          | 2          |
+| South     | 4         | 2         | 4          | 3          |
+| East      | 4         | 2         | 3          | 2          |
+
+// ---
+
 Implicit stuff:
 
 - 2D
